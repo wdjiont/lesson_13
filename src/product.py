@@ -38,18 +38,4 @@ class Product:
             self._price = new_price
 
 
-# pr_1 = Product('футболка', 'хлопковая футболка', 2190.5, 13)
-# pr_1.price
-# print(pr_1.price)
-# print(pr_1.price)
-# pr_1.price = 4000
-# print(pr_1.price)
-# cat_1.add_product(pr_1)
-# pr_2 = Product('шапка', 'теплая', 215, 1)
-# pr_3 = Product('брюки', 'джинсы', 3700, 5)
-# cat_1.add_product(pr_2)
-# cat_1.add_product(pr_3)
-# # new_pr = Product.product_make('шапка', 'блаблабла', 150, 12, cat_1.products)
-# new_p = Product.product_make('шапка', 'блаблабла', 130, 10, cat_1.get_list)
-# print(new_p.price)
 

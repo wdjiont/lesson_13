@@ -37,13 +37,4 @@ class Category:
         return self.__products
 
 
-# cat_1 = Category('Lime', 'Магазин мужской одежды', [])
-# pr_1 = Product('Футболка', 'хлопковая футболка', 2190.5, 13)
-# pr_2 = Product('Шапка', 'теплая', 215, 1)
-# pr_3 = Product('Брюки', 'джинсы', 3700, 5)
-# cat_1.add_product(pr_1)
-# cat_1.add_product(pr_2)
-# cat_1.add_product(pr_3)
-#
-# print(cat_1.product_list)
 
