@@ -29,12 +29,27 @@ class Category:
         """Возвращает список товаров в нужном формате"""
         result = ''
         for i in self.__products:
-            result += f'{i.name}, {i.price} руб. Остаток: {i.number_of_products} шт.'
+            result += f'{i.name}, {i.price} руб. Остаток: {i.quantity} шт.'
         return result
 
     @property
     def get_list(self):
         return self.__products
 
+    def __len__(self):
+        all_products = 0
+        for i in self.__products:
+            all_products += i.quantity
+        return all_products
 
+    def __str__(self):
+        return f"{self.name}, количество продуктов: {len(self)} шт."
+
+
+cat_1 = Category('Lime', 'Магазин мужской одежды', [])
+pr = Product('футболка', 'хлопковая футболка', 2190.5, 13)
+#pr_1 = Product('футболк', 'хлопквая футболка', 2190, 14)
+cat_1.add_product(pr)
+#cat_1.add_product(pr_1)
+print(cat_1)
 

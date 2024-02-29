@@ -2,21 +2,21 @@ class Product:
     name: str
     description: str
     price: float
-    number_of_products: int
+    quantity: int
 
-    def __init__(self, name, description, price, number_of_products):
+    def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
         self._price = price
-        self.number_of_products = number_of_products
+        self.quantity = quantity
 
     @classmethod
-    def create_product(cls, name, description, price, number_of_products):
+    def create_product(cls, name, description, price, quantity):
         """
         Cоздает товар и возвращает объект,
         который можно добавлять в список товаров
         """
-        return cls(name, description, price, number_of_products)
+        return cls(name, description, price, quantity)
 
     @property
     def price(self):
@@ -37,5 +37,15 @@ class Product:
         else:
             self._price = new_price
 
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
+
+    def __add__(self, other):
+        return self.price * self.quantity + other.price * other.quantity
 
 
+# pr = Product('футболка', 'хлопковая футболка', 2000, 2)
+# pr_1 = Product('футболк', 'хлопквая футболка', 200, 3)
+# print(pr + pr_1)
+# pr = Product('футболка', 'хлопковая футболка', 2190.5, 13)
+# print(pr)
