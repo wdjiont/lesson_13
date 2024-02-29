@@ -43,9 +43,3 @@ class Product:
     def __add__(self, other):
         return self.price * self.quantity + other.price * other.quantity
 
-
-# pr = Product('футболка', 'хлопковая футболка', 2000, 2)
-# pr_1 = Product('футболк', 'хлопквая футболка', 200, 3)
-# print(pr + pr_1)
-# pr = Product('футболка', 'хлопковая футболка', 2190.5, 13)
-# print(pr)

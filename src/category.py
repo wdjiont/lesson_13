@@ -45,11 +45,3 @@ class Category:
     def __str__(self):
         return f"{self.name}, количество продуктов: {len(self)} шт."
 
-
-cat_1 = Category('Lime', 'Магазин мужской одежды', [])
-pr = Product('футболка', 'хлопковая футболка', 2190.5, 13)
-#pr_1 = Product('футболк', 'хлопквая футболка', 2190, 14)
-cat_1.add_product(pr)
-#cat_1.add_product(pr_1)
-print(cat_1)
-
