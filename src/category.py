@@ -37,11 +37,13 @@ class Category:
         return self.__products
 
     def __len__(self):
+        """Считает количество всех продуктов на складе"""
         all_products = 0
         for i in self.__products:
             all_products += i.quantity
         return all_products
 
     def __str__(self):
+        """Добавляет строковое отображение"""
         return f"{self.name}, количество продуктов: {len(self)} шт."
 

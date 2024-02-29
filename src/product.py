@@ -38,8 +38,10 @@ class Product:
             self._price = new_price
 
     def __str__(self):
+        """Добавляет строковое отображение"""
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
+        """Складывает объекты между собой определенным методом"""
         return self.price * self.quantity + other.price * other.quantity
 
