@@ -51,17 +51,3 @@ class Category:
         return f"{self.name}, количество продуктов: {len(self)} шт."
 
 
-# class Some:
-#     def __init__(self, name, brand):
-#         self.name = name
-#         self.brand = brand
-#
-#
-# some = Some('hui', 'gucci')
-# lg = LawnGrass('футболка', 'хлопковая футболка', 219.5, 12, 'blue', 'Italy', 30)
-# sm = smart = Smartphone('футболка', 'хлопковая футболка', 2190.5, 13, 'black', 15, 654, 256)
-# cat = Category('Lime', 'Магазин мужской одежды', [])
-# cat.add_product(some)
-#
-# print(cat.add_product(some))
-# # print(cat.product_list)

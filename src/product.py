@@ -64,9 +64,3 @@ class LawnGrass(Product):
         self.germination_period = germination_period
 
 
-# pr = Product('футболка', 'хлопковая футболка', 2190.5, 13, 'blue')
-# # smart = Smartphone('футболка', 'хлопковая футболка', 2190.5, 13, 'black', 15, 654, 256)
-# pr_1 = Product('футболк', 'хлопкова футболка', 2195, 12, 'black')
-#
-#
-# print(pr + pr_1)
