@@ -1,4 +1,4 @@
-from src.product import Product
+from src.product import Product, Smartphone, LawnGrass
 
 
 class Category:
@@ -20,9 +20,12 @@ class Category:
         """
         Принимает на вход объект товара и добавляет в список
         """
-        list_product = self.__products
-        list_product.append(product)
-        return list_product
+        if not isinstance(product, Product):
+            raise TypeError
+        else:
+            list_product = self.__products
+            list_product.append(product)
+            return list_product
 
     @property
     def product_list(self):
@@ -47,3 +50,18 @@ class Category:
         """Добавляет строковое отображение"""
         return f"{self.name}, количество продуктов: {len(self)} шт."
 
+
+# class Some:
+#     def __init__(self, name, brand):
+#         self.name = name
+#         self.brand = brand
+#
+#
+# some = Some('hui', 'gucci')
+# lg = LawnGrass('футболка', 'хлопковая футболка', 219.5, 12, 'blue', 'Italy', 30)
+# sm = smart = Smartphone('футболка', 'хлопковая футболка', 2190.5, 13, 'black', 15, 654, 256)
+# cat = Category('Lime', 'Магазин мужской одежды', [])
+# cat.add_product(some)
+#
+# print(cat.add_product(some))
+# # print(cat.product_list)
