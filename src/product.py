@@ -4,19 +4,20 @@ class Product:
     price: float
     quantity: int
 
-    def __init__(self, name, description, price, quantity):
+    def __init__(self, name, description, price, quantity, colour):
         self.name = name
         self.description = description
         self._price = price
         self.quantity = quantity
+        self.colour = colour
 
     @classmethod
-    def create_product(cls, name, description, price, quantity):
+    def create_product(cls, name, description, price, quantity, colour):
         """
         Cоздает товар и возвращает объект,
         который можно добавлять в список товаров
         """
-        return cls(name, description, price, quantity)
+        return cls(name, description, price, quantity, colour)
 
     @property
     def price(self):
@@ -43,5 +44,23 @@ class Product:
 
     def __add__(self, other):
         """Складывает объекты между собой определенным методом"""
-        return self.price * self.quantity + other.price * other.quantity
+        if isinstance(other, type(self)):
+            return self.price * self.quantity + other.price * other.quantity
+        raise TypeError
+
+
+class Smartphone(Product):
+    def __init__(self, name, description, price, quantity, colour, productivity, model, memory):
+        super().__init__(name, description, price, quantity, colour)
+        self.productivity = productivity
+        self.model = model
+        self.memory = memory
+
+
+class LawnGrass(Product):
+    def __init__(self, name, description, price, quantity, colour, producing_country, germination_period):
+        super().__init__(name, description, price, quantity, colour)
+        self.producing_country = producing_country
+        self.germination_period = germination_period
+
 

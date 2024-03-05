@@ -1,4 +1,4 @@
-from src.product import Product
+from src.product import Product, Smartphone, LawnGrass
 
 
 class Category:
@@ -20,9 +20,11 @@ class Category:
         """
         Принимает на вход объект товара и добавляет в список
         """
-        list_product = self.__products
-        list_product.append(product)
-        return list_product
+        if not isinstance(product, Product):
+            raise TypeError
+        else:
+            self.__products.append(product)
+            return self.__products
 
     @property
     def product_list(self):
