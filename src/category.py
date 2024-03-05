@@ -1,7 +1,7 @@
-from src.product import Product, Smartphone, LawnGrass
+from src.product import Product, MixinRepr
 
 
-class Category:
+class Category(MixinRepr):
     name: str
     description: str
     products: list
@@ -15,6 +15,7 @@ class Category:
         self.__products = products
         Category.category_count += 1
         Category.product_count += len(set(products))
+        super().__init__()
 
     def add_product(self, product):
         """
@@ -48,4 +49,3 @@ class Category:
     def __str__(self):
         """Добавляет строковое отображение"""
         return f"{self.name}, количество продуктов: {len(self)} шт."
-
