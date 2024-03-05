@@ -1,4 +1,27 @@
-class Product:
+from abc import ABC, abstractmethod
+
+
+class ClassAbc(ABC):
+    """ Абстрактный класс, который создает экземпляры класса """
+    @abstractmethod
+    def create_product(self, *args, **kwargs):
+        pass
+
+
+class MixinRepr:
+    """ Миксин, который добавляет вывод в консоль о том, что был создан объект """
+
+    def __init__(self, *args, **kwargs) -> None:
+        print(repr(self))
+
+    def __repr__(self):
+        item = []
+        for k, v in self.__dict__.items():
+            item.append(v)
+        return f'Создан объект -> {self.__class__.__name__}{tuple(item)}'
+
+
+class Product(ClassAbc, MixinRepr):
     name: str
     description: str
     price: float
@@ -10,6 +33,7 @@ class Product:
         self._price = price
         self.quantity = quantity
         self.colour = colour
+        super().__init__()
 
     @classmethod
     def create_product(cls, name, description, price, quantity, colour):
@@ -49,7 +73,8 @@ class Product:
         raise TypeError
 
 
-class Smartphone(Product):
+class Smartphone(Product, MixinRepr):
+
     def __init__(self, name, description, price, quantity, colour, productivity, model, memory):
         super().__init__(name, description, price, quantity, colour)
         self.productivity = productivity
@@ -57,10 +82,9 @@ class Smartphone(Product):
         self.memory = memory
 
 
-class LawnGrass(Product):
+class LawnGrass(Product, MixinRepr):
+
     def __init__(self, name, description, price, quantity, colour, producing_country, germination_period):
         super().__init__(name, description, price, quantity, colour)
         self.producing_country = producing_country
         self.germination_period = germination_period
-
-
