@@ -23,9 +23,8 @@ class Category:
         if not isinstance(product, Product):
             raise TypeError
         else:
-            list_product = self.__products
-            list_product.append(product)
-            return list_product
+            self.__products.append(product)
+            return self.__products
 
     @property
     def product_list(self):
@@ -49,5 +48,4 @@ class Category:
     def __str__(self):
         """Добавляет строковое отображение"""
         return f"{self.name}, количество продуктов: {len(self)} шт."
-
 
