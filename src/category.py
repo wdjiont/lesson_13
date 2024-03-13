@@ -53,6 +53,7 @@ class Category(MixinRepr):
         return f"{self.name}, количество продуктов: {len(self)} шт."
 
     def average_price(self):
+        """ Подсчитывает средний ценник всех товаров """
         try:
             sum_quantity = 0
             for product in self.__products:
