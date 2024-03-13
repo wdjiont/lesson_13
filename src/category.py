@@ -23,6 +23,8 @@ class Category(MixinRepr):
         """
         if not isinstance(product, Product):
             raise TypeError
+        elif product.quantity == 0:
+            raise ValueError
         else:
             self.__products.append(product)
             return self.__products
@@ -49,3 +51,14 @@ class Category(MixinRepr):
     def __str__(self):
         """Добавляет строковое отображение"""
         return f"{self.name}, количество продуктов: {len(self)} шт."
+
+    def average_price(self):
+        try:
+            sum_quantity = 0
+            for product in self.__products:
+                sum_quantity += product.price
+            average = sum_quantity / len(self.__products)
+            return average
+        except ZeroDivisionError as e:
+            return 0
+
